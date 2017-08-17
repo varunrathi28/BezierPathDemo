@@ -15,6 +15,14 @@ class DemoView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        createRectange()
+        
+        UIColor.orange.setFill()
+        path.fill()
+        
+        UIColor.purple.setStroke()
+        path.stroke()
+        
         self.backgroundColor = UIColor.yellow
     }
     
@@ -39,7 +47,13 @@ class DemoView: UIView {
         
         path.addLine(to: CGPoint(x: self.frame.size.width, y: self.frame.size.height))
         
-        // Draw
+        // Draw from Bottom right- Top Right
+        
+        path.addLine(to: CGPoint(x: self.frame.size.width, y: 0))
+        
+        // Draw to top left (origin)
+        
+        path.close()
         
         
         
