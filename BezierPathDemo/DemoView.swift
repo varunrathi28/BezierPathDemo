@@ -15,13 +15,7 @@ class DemoView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        createRectange()
-        
-        UIColor.orange.setFill()
-        path.fill()
-        
-        UIColor.purple.setStroke()
-        path.stroke()
+       
         
         self.backgroundColor = UIColor.yellow
     }
@@ -31,6 +25,19 @@ class DemoView: UIView {
     }
     
     
+    override func draw(_ rect: CGRect) {
+        //createRectange()
+        
+        createTriangle()
+        
+        UIColor.orange.setFill()
+        path.fill()
+        
+        UIColor.purple.setStroke()
+        path.stroke()
+    }
+    
+    // Create Rectangle
     
     func createRectange()
     {
@@ -54,17 +61,21 @@ class DemoView: UIView {
         // Draw to top left (origin)
         
         path.close()
-        
-        
-        
+
     }
     
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    // Create Triangle
+    
+    func createTriangle()
+    {
+        
+        path = UIBezierPath()
+        path.move(to:CGPoint(x: self.frame.size.width/2, y: 0.0))
+        path.addLine(to: CGPoint(x: 0.0, y: self.frame.size.width))
+        path.addLine(to: CGPoint(x: self.frame.size.width, y: self.frame.size.height))
+        path.close()
     }
-    */
+    
+
 
 }
