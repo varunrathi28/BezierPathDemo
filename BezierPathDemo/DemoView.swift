@@ -31,7 +31,11 @@ class DemoView: UIView {
         
       //  createOval()
         
-      createCircle()
+     // createCircle()
+        
+      //  createRoundedRect()
+        
+        createArc()
         
         UIColor.orange.setFill()
         path.fill()
@@ -91,6 +95,18 @@ class DemoView: UIView {
     func createCircle()
     {
         self.path = UIBezierPath(ovalIn: CGRect(x: self.frame.size.width/2 - self.frame.size.height/2, y: 0.0, width: self.frame.size.height, height: self.frame.size.height))
+    }
+    
+    // Rounded corner with specific rounding on sides [Top right, Top left, Bottom Right ,Bottom Left]
+    
+    func createRoundedRect()
+    {
+        self.path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: [.bottomLeft,.bottomRight], cornerRadii: CGSize(width: 15.0, height: 0))
+    }
+    
+    func createArc()
+    {
+        self.path = UIBezierPath(arcCenter: CGPoint(x: self.frame.size.width/2, y:  self.frame.size.height/2), radius: self.frame.size.height/2, startAngle: CGFloat(180) * CGFloat( Double.pi / 180), endAngle: 0, clockwise: true)
     }
     
     
