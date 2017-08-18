@@ -14,6 +14,7 @@ class DemoView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+         createCAShape()
         self.backgroundColor = UIColor.yellow
         
       
@@ -35,7 +36,9 @@ class DemoView: UIView {
         
       //  createRoundedRect()
         
-        createArc()
+     //   createArc()
+        
+       
         
         UIColor.orange.setFill()
         path.fill()
@@ -78,7 +81,7 @@ class DemoView: UIView {
         
         path = UIBezierPath()
         path.move(to:CGPoint(x: self.frame.size.width/2, y: 0.0))
-        path.addLine(to: CGPoint(x: 0.0, y: self.frame.size.width))
+        path.addLine(to: CGPoint(x: 0.0, y: self.frame.size.height))
         path.addLine(to: CGPoint(x: self.frame.size.width, y: self.frame.size.height))
         path.close()
     }
@@ -106,12 +109,39 @@ class DemoView: UIView {
     
     func createArc()
     {
-        self.path = UIBezierPath(arcCenter: CGPoint(x: self.frame.size.width/2, y:  self.frame.size.height/2), radius: self.frame.size.height/2, startAngle: CGFloat(180) * CGFloat( Double.pi / 180), endAngle: 0, clockwise: true)
+        self.path = UIBezierPath(arcCenter: CGPoint(x: self.frame.size.width/2, y:  self.frame.size.height/2), radius: self.frame.size.height/2, startAngle: CGFloat(240).toRadian(), endAngle: CGFloat(15).toRadian(), clockwise: false)
+    }
+
+
+    // CASHAPE
+    
+    func createCAShape()
+    {
+        self.createTriangle()
+        
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.path = self.path.cgPath
+        shapeLayer.fillColor = UIColor.red.cgColor
+        shapeLayer.strokeColor = UIColor.blue.cgColor
+        shapeLayer.lineWidth = 3.0
+        
+        self.layer.addSublayer(shapeLayer)
+        
+    }
+
+
+}
+
+
+
+
+
+
+extension CGFloat
+{
+    func toRadian() -> CGFloat
+    {
+        return self * CGFloat (Double.pi)/180.0
     }
     
-    
-    
-    
-
-
 }

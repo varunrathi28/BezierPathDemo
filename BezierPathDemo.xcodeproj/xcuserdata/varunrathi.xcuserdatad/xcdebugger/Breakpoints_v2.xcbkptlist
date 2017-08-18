@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BezierPathDemo/DemoView.swift"
-            timestampString = "524671235.43063"
+            timestampString = "524755772.820637"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "16"
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BezierPathDemo/DemoView.swift"
-            timestampString = "524671673.021204"
+            timestampString = "524755772.820637"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
             landmarkName = "draw(_:)"
             landmarkType = "7">
          </BreakpointContent>
