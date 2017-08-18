@@ -29,12 +29,14 @@ class DemoView: UIView {
         
       //  createTriangle()
         
-        createOval()
+      //  createOval()
+        
+      createCircle()
         
         UIColor.orange.setFill()
         path.fill()
         
-        UIColor.purple.setStroke()
+        UIColor.green.setStroke()
         path.stroke()
     }
     
@@ -83,6 +85,16 @@ class DemoView: UIView {
     {
           self.path = UIBezierPath(ovalIn: self.bounds)
     }
+    
+    // Circle
+    
+    func createCircle()
+    {
+        self.path = UIBezierPath(ovalIn: CGRect(x: self.frame.size.width/2 - self.frame.size.height/2, y: 0.0, width: self.frame.size.height, height: self.frame.size.height))
+    }
+    
+    
+    
     
 
 
